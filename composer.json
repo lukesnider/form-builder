@@ -1,0 +1,19 @@
+{
+    "name": "sniderwebdev/formbuilder",
+    "description": "wordpress Form Builder Plugin",
+    "authors": [
+        {
+            "name": "Luke Snider",
+            "email": "sniderwebdev@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "FormBuilder\\": "src/"
+      }
+    },
+    "require": {
+        "jenssegers/blade": "^1.1",
+        "illuminate/database": "^5.6"
+    }
+}
