@@ -16,20 +16,24 @@ class Plugin {
 
   private $ajax;
 
+  private $widgets;
+
   public function init(){
     add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue'] );
     add_action('admin_menu', [$this, 'swd_plugin_page']);
     $this->backend = Backend::getInstance();
     $this->ajax = new AjaxManager;
-
+    add_action('init', [$this, 'widgets']);
     //add_action( 'wp_enqueue_scripts', [$this, 'frontend_enqueue'] );
   }
+  public function widgets(){
+    $this->widgets = Backend::getInstance()->widgets($this->widgets);
+  }
   public function admin_enqueue($hook){
-
     if('toplevel_page_swd_form_builder' == $hook){
       wp_enqueue_style( 'swd-form-builder-css', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.css' );
       wp_register_script( 'swd-form-builder-js', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.js', array(), $this->version,true );
-      wp_localize_script( 'swd-form-builder-js', 'formBuilderData', ['post_id' => get_the_ID()] );
+      wp_localize_script( 'swd-form-builder-js', 'formBuilderData', ['post_id' => get_the_ID(), 'form_widgets' => $this->widgets] );
       wp_enqueue_script( 'swd-form-builder-js' );
     }
   }

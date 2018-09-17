@@ -1,37 +1,195 @@
 
-.draggable-item[data-v-24911eda] {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.draggable-item {
   cursor: move;
 }
-.smooth-dnd-container[data-v-24911eda] {
+.smooth-dnd-container {
   min-width: 100px;
   min-height: 100px;
   transition: all .5s;
 }
-.form-widget[data-v-24911eda] {
+.form-widget {
   padding: 10px;
   border: solid 1px rgba(0,0,0,0.85);
   width: 100%;
 }
-.form-element[data-v-24911eda] {
+.form-element {
 }
-.smooth-dnd-draggable-wrapper:hover .form-element[data-v-24911eda] {
+.smooth-dnd-draggable-wrapper:hover .form-element {
   border: solid 1px #C4D6B0;
 }
-.element-inner[data-v-24911eda] {
+.element-inner {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.clickable.remove-element-button[data-v-24911eda] {
+.clickable.remove-element-button {
   color: #F71735;
 }
-div.clickable[data-v-24911eda]{
+div.clickable{
   cursor: pointer;
 }
-.smooth-dnd-container.vertical > .smooth-dnd-draggable-wrapper[data-v-24911eda] {
+.smooth-dnd-container.vertical > .smooth-dnd-draggable-wrapper {
     overflow: visible;
 }
-.element-actions[data-v-24911eda] {
+.element-actions {
     justify-content: center;
     align-items: center;
     z-index: 999;
@@ -39,16 +197,24 @@ div.clickable[data-v-24911eda]{
     width: 75px;
     display: none;
 }
-.smooth-dnd-draggable-wrapper:hover .element-actions[data-v-24911eda] {
+.smooth-dnd-draggable-wrapper:hover .element-actions {
   display:flex;
 }
-.element-actions svg[data-v-24911eda] {
+.element-actions svg {
   color: #291F1E;
 }
-.element-actions .clickable[data-v-24911eda] {
+.element-actions .clickable {
   padding: 5px;
 }
+.element-span-container {
+  width: 100%;
+  display: flex;
+}
 
+/* ALL INPUTS */
+.swd-input {
+  width: 100%;
+}
 
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
