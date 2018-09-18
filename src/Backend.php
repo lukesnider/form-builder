@@ -35,6 +35,14 @@ class Backend extends \FormBuilder\Controller {
           'padding' => ['top'=>8,'right'=>8,'bottom'=>8,'left'=>8,],
           'margin' => ['top'=>0,'right'=>0,'bottom'=>0,'left'=>0,],
           'justify' => 'center',
+          'color' =>[
+            'rgba' =>[
+              'r' => 0,
+              'g' => 0,
+              'b' => 0,
+              'a' => 1
+            ]
+          ],
         ],
         'controls' => [
           'WidthControl',
@@ -42,6 +50,7 @@ class Backend extends \FormBuilder\Controller {
           'MarginControl',
           'JustifyControl',
           'PlaceholderControl',
+          'ColorControl',
         ]
       ],
       //[

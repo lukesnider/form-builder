@@ -66,6 +66,7 @@ import JustifyControl     from './controls/Justify.vue'
 import PlaceholderControl from './controls/Placeholder.vue'
 import ColorControl from './controls/Color.vue'
 //import BackgroundControl from './controls/Background.vue'
+import CustomCssControl from './controls/CustomCss.vue'
 
 export default {
     data () {
@@ -111,6 +112,7 @@ export default {
               'PlaceholderControl',
               'ColorControl',
               //'BackgroundControl',
+              //'CustomCssControl',
             ]
           }
         ],
@@ -125,6 +127,9 @@ export default {
           uid: 'asdfasdf'
         }
       }
+    },
+    created: function () {
+
     },
     methods: {
       onDrop: function(collection, dropResult) {
@@ -185,6 +190,7 @@ export default {
       PlaceholderControl,
       ColorControl,
       //BackgroundControl,
+      CustomCssControl,
     }
 }
 </script>
