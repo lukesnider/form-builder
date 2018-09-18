@@ -27,6 +27,7 @@
       <template v-for="control in selectedElement.controls">
           <component :is="control"  :element="selectedElement"></component>
       </template>
+      <custom-css  :styles="styles"></custom-css>
       <div class="form-group">
         <button @click="doneEdit()" type="button" class="btn btn-dark">Update</button>
       </div>
@@ -72,6 +73,7 @@ export default {
     data () {
       return {
         widgetList: formBuilderData.form_widgets,
+        formId: '',
         elementList: [
           {
             id: 'submit-button',
@@ -112,7 +114,6 @@ export default {
               'PlaceholderControl',
               'ColorControl',
               //'BackgroundControl',
-              //'CustomCssControl',
             ]
           }
         ],
@@ -125,11 +126,12 @@ export default {
             'WidthControl'
           ],
           uid: 'asdfasdf'
-        }
+        },
+        styles: '',
       }
     },
     created: function () {
-
+      this.formId = this.randomId();
     },
     methods: {
       onDrop: function(collection, dropResult) {
@@ -190,7 +192,7 @@ export default {
       PlaceholderControl,
       ColorControl,
       //BackgroundControl,
-      CustomCssControl,
+      'custom-css':CustomCssControl,
     }
 }
 </script>
