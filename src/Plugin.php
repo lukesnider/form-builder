@@ -32,9 +32,10 @@ class Plugin {
   public function admin_enqueue($hook){
     if('toplevel_page_swd_form_builder' == $hook){
       wp_enqueue_style( 'swd-form-builder-css', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.css' );
-      wp_register_script( 'swd-form-builder-js', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.js', array(), $this->version,true );
+      wp_register_script( 'swd-form-builder-js', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.js', array('jquery'), $this->version,true );
       wp_localize_script( 'swd-form-builder-js', 'formBuilderData', ['post_id' => get_the_ID(), 'form_widgets' => $this->widgets] );
       wp_enqueue_script( 'swd-form-builder-js' );
+
     }
   }
   public function swd_plugin_page(){

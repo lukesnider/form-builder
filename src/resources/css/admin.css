@@ -51,8 +51,21 @@ div.clickable{
   width: 100%;
   display: flex;
 }
-
+.no-padding {
+  padding: 0px !important;
+}
+.label-help-text {
+    font-size: 12px;
+    font-style: italic;
+}
 /* ALL INPUTS */
 .swd-input {
   width: 100%;
+}
+.swd-form-element-wrapper {
+  display:flex;
+  width: 100%;
+}
+.swd-input[type="submit"] {
+  cursor: pointer;
 }

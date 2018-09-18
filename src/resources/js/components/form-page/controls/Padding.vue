@@ -1,14 +1,27 @@
 <template>
 <div>
     <div class="row">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="forms-tab" data-toggle="tab" href="#forms" role="tab" aria-controls="forms" aria-selected="true">Forms</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="builder-tab" data-toggle="tab" href="#builder" role="tab" aria-controls="builder" aria-selected="false">Form Builder</a>
-        </li>
-      </ul>
+      <div class="col-12">
+        <label>Padding</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 no-padding">
+        <label class="label-help-text" for="padding-top">Top</label>
+        <input v-model="element.styles.padding.top" type="number" class="form-control" id="padding-top">
+      </div>
+      <div class="col-3 no-padding">
+        <label class="label-help-text" for="padding-right">Right</label>
+        <input v-model="element.styles.padding.right" type="number" class="form-control" id="padding-right">
+      </div>
+      <div class="col-3 no-padding">
+        <label class="label-help-text" for="padding-bottom">Bottom</label>
+        <input v-model="element.styles.padding.top" type="number" class="form-control" id="padding-bottom">
+      </div>
+      <div class="col-3 no-padding">
+        <label class="label-help-text" for="padding-left">Left</label>
+        <input v-model="element.styles.padding.left" type="number" class="form-control" id="padding-left">
+      </div>
     </div>
 </div>
 </template>
@@ -20,6 +33,7 @@ export default {
     data () {
       return {}
     },
+    props: ['element'],
     components: {
     }
 }
