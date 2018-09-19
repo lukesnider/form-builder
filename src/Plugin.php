@@ -35,7 +35,6 @@ class Plugin {
       wp_register_script( 'swd-form-builder-js', plugins_url( 'swd-forms' ) . '/src/resources/build/dist/backend.js', array('jquery'), $this->version,true );
       wp_localize_script( 'swd-form-builder-js', 'formBuilderData', ['post_id' => get_the_ID(), 'form_widgets' => $this->widgets] );
       wp_enqueue_script( 'swd-form-builder-js' );
-
     }
   }
   public function swd_plugin_page(){

@@ -16,7 +16,7 @@
       </div>
       <div class="col-3 no-padding">
         <label class="label-help-text" for="padding-bottom">Bottom</label>
-        <input v-model="element.styles.padding.top" type="number" class="form-control" id="padding-bottom">
+        <input v-model="element.styles.padding.bottom" type="number" class="form-control" id="padding-bottom">
       </div>
       <div class="col-3 no-padding">
         <label class="label-help-text" for="padding-left">Left</label>

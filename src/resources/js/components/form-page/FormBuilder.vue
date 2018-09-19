@@ -27,7 +27,12 @@
       <template v-for="control in selectedElement.controls">
           <component :is="control"  :element="selectedElement"></component>
       </template>
-      <custom-css  :styles="styles"></custom-css>
+      <div class="row">
+        <div class="form-group">
+          <label>Custom Css</label>
+          <codemirror v-model="form_styles" :options="cmOptions"></codemirror>
+        </div>
+      </div>
       <div class="form-group">
         <button @click="doneEdit()" type="button" class="btn btn-dark">Update</button>
       </div>
@@ -68,10 +73,20 @@ import PlaceholderControl from './controls/Placeholder.vue'
 import ColorControl from './controls/Color.vue'
 //import BackgroundControl from './controls/Background.vue'
 import CustomCssControl from './controls/CustomCss.vue'
+import { codemirror } from 'vue-codemirror'
+import 'codemirror/lib/codemirror.css'
+
 
 export default {
     data () {
       return {
+        cmOptions:{
+          tabSize: 4,
+          mode: 'text/css',
+          theme: 'base16-dark',
+          lineNumbers: true,
+          line: true,
+        },
         widgetList: formBuilderData.form_widgets,
         formId: '',
         elementList: [
@@ -127,11 +142,14 @@ export default {
           ],
           uid: 'asdfasdf'
         },
-        styles: '',
+        form_styles: '.test{luke:luke}',
       }
     },
     created: function () {
       this.formId = this.randomId();
+    },
+    mounted: function() {
+
     },
     methods: {
       onDrop: function(collection, dropResult) {
@@ -178,7 +196,7 @@ export default {
         this.editElementShow = false
       },
       getElementContent: function(element) {
-        var html = '<'+element.tag+' style="color: rgba('+element.styles.color.rgba.r+','+element.styles.color.rgba.b+','+element.styles.color.rgba.g+','+element.styles.color.rgba.a+');width: '+element.styles.width+element.styles.width_type+'; margin: '+element.styles.margin.top+'px '+element.styles.margin.right+'px '+element.styles.margin.bottom+'px '+element.styles.margin.left+'px ;padding: '+element.styles.padding.top+'px '+element.styles.padding.right+'px '+element.styles.padding.bottom+'px '+element.styles.padding.left+'px;" type="'+element.type+'"  class="swd-input" placeholder="'+element.placeholder+'" ></'+element.tag+'>'
+        var html = '<'+element.tag+' style="color: rgba('+element.styles.color.rgba.r+','+element.styles.color.rgba.g+','+element.styles.color.rgba.b+','+element.styles.color.rgba.a+');width: '+element.styles.width+element.styles.width_type+'; margin: '+element.styles.margin.top+'px '+element.styles.margin.right+'px '+element.styles.margin.bottom+'px '+element.styles.margin.left+'px ;padding: '+element.styles.padding.top+'px '+element.styles.padding.right+'px '+element.styles.padding.bottom+'px '+element.styles.padding.left+'px;" type="'+element.type+'"  class="swd-input" placeholder="'+element.placeholder+'" ></'+element.tag+'>'
         return html;
       },
     },
@@ -193,6 +211,7 @@ export default {
       ColorControl,
       //BackgroundControl,
       'custom-css':CustomCssControl,
+      codemirror,
     }
 }
 </script>
